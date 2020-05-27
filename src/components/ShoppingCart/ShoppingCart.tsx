@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import {
   Menu,
@@ -73,13 +74,25 @@ const ShoppingCart: React.FC<Props> = ({
         <li key={index} className={classes.cartContainer}>
           <Grid container>
             <Grid item xs={9} className={classes.cartCountry}>
-              <img
-                src={flag}
-                width={90}
-                alt={flag}
-                style={{ paddingRight: 10 }}
-              />
-              <Typography>{name}</Typography>
+              <Link
+                to={`/react-redux-countries-app/country/${name}`}
+                className={classes.cartLink}
+              >
+                <img
+                  src={flag}
+                  width={90}
+                  alt={flag}
+                  style={{ paddingRight: 10 }}
+                />
+              </Link>
+              <Typography>
+                <Link
+                  to={`/react-redux-countries-app/country/${name}`}
+                  className={classes.cartLink}
+                >
+                  {name}
+                </Link>
+              </Typography>
             </Grid>
             <Grid item xs={3} style={{ paddingLeft: 10 }}>
               <IconButton

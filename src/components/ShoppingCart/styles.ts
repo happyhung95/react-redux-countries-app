@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme: Theme) =>
     cartCountry: {
       display: 'flex',
       alignItems: 'center',
-      flexWrap: 'nowrap',
+    },
+    cartLink: {
+      textDecoration: 'none',
+      color: 'black',
     },
   })
 )

@@ -48,7 +48,10 @@ function CountriesList() {
           <div className={classes.root} key={index}>
             <Paper className={classes.paper}>
               <Grid container direction="column" alignItems="center">
-                <Link to={`/country/${country.name}`} className={classes.image}>
+                <Link
+                  to={`/react-redux-countries-app/country/${country.name}`}
+                  className={classes.image}
+                >
                   <img
                     className={classes.img}
                     src={country.flag}
@@ -57,7 +60,7 @@ function CountriesList() {
                 </Link>
                 <Typography variant="h5">
                   <Link
-                    to={`/country/${country.name}`}
+                    to={`/react-redux-countries-app/country/${country.name}`}
                     className={classes.countryName}
                     style={{ color: theme.color }}
                   >
@@ -122,7 +125,9 @@ function CountriesList() {
             .map((country, index) => (
               <TableRow key={index}>
                 <TableCell align="right" className={classes.image}>
-                  <Link to={`/country/${country.name}`}>
+                  <Link
+                    to={`/react-redux-countries-app/country/${country.name}`}
+                  >
                     <img
                       className={classes.img}
                       src={country.flag}
@@ -132,7 +137,7 @@ function CountriesList() {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   <Link
-                    to={`/country/${country.name}`}
+                    to={`/react-redux-countries-app/country/${country.name}`}
                     className={classes.countryName}
                   >
                     {country.name}

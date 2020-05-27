@@ -6,8 +6,12 @@ import Country from './pages/Country/Country'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/country/:name" component={Country} />
+    <Route exact path="/react-redux-countries-app" component={Home} />
+    <Route
+      exact
+      path="/react-redux-countries-app/country/:name"
+      component={Country}
+    />
   </Switch>
 )
 
