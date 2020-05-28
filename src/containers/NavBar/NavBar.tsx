@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import {
   AppBar,
@@ -51,7 +52,12 @@ export default function NavBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Countries
+            <Link
+              to={`/react-redux-countries-app/`}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              Countries
+            </Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

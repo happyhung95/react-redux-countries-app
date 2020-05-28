@@ -94,7 +94,11 @@ const ShoppingCart: React.FC<Props> = ({
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs={3} style={{ paddingLeft: 10 }}>
+            <Grid
+              item
+              xs={3}
+              style={{ paddingLeft: 20, display: 'flex', alignItems: 'center' }}
+            >
               <IconButton
                 edge="end"
                 aria-label="remove country from cart"
