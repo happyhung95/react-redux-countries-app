@@ -1,17 +1,21 @@
 import React from 'react'
 
 export const themes = {
-  green: {
-    color: '#20B2AA',
-    name: 'Teal',
+  hazel: {
+    color: '#8E7618 ',
+    name: 'Hazel',
   },
-  orange: {
-    color: '#ff9700',
-    name: 'Amber',
+  red: {
+    color: '#d3003f',
+    name: 'Utah Crimson',
   },
   blue: {
-    color: '#407294',
-    name: 'Cerulean',
+    color: '#000080',
+    name: 'Navy Blue',
+  },
+  yellow: {
+    color: '#fcc200',
+    name: 'Golden Poppy',
   },
 }
 

@@ -5,16 +5,18 @@ import ThemeContext, { themes } from './context'
 
 export default function App() {
   const [context, setContext] = useState({
-    theme: themes.blue,
+    theme: themes.red,
     switchTheme: (color: string) => {
       setContext((current) => ({
         ...current,
         theme:
           color === themes.blue.color
             ? themes.blue
-            : color === themes.green.color
-              ? themes.green
-              : themes.orange,
+            : color === themes.hazel.color
+              ? themes.hazel
+              : color === themes.yellow.color
+                ? themes.yellow
+                : themes.red,
       }))
     },
   })

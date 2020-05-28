@@ -15,6 +15,7 @@ import {
   TableHead,
   TableRow,
   TableSortLabel,
+  Divider,
 } from '@material-ui/core'
 
 import AddButton from '../../components/AddButton'
@@ -90,6 +91,7 @@ function CountriesList() {
                   {country.region}
                 </Typography>
                 <AddButton country={country} />
+                <Divider />
               </Grid>
             </Paper>
           </div>
@@ -103,7 +105,7 @@ function CountriesList() {
         <TableHead>
           <TableRow>
             <TableCell>Flag</TableCell>
-            <TableCell align="left">
+            <TableCell>
               <TableSortLabel
                 direction={ascendingOrder ? 'asc' : 'desc'}
                 onClick={handleSort}
@@ -111,9 +113,9 @@ function CountriesList() {
                 Name
               </TableSortLabel>
             </TableCell>
-            <TableCell align="left">Languages</TableCell>
-            <TableCell align="right">Population</TableCell>
-            <TableCell align="left">Region</TableCell>
+            <TableCell>Languages</TableCell>
+            <TableCell>Population</TableCell>
+            <TableCell>Region</TableCell>
             <TableCell>{/*button column */}</TableCell>
           </TableRow>
         </TableHead>
@@ -124,7 +126,7 @@ function CountriesList() {
             )
             .map((country, index) => (
               <TableRow key={index}>
-                <TableCell align="right" className={classes.image}>
+                <TableCell className={classes.image}>
                   <Link
                     to={`/react-redux-countries-app/country/${country.name}`}
                   >
@@ -143,18 +145,18 @@ function CountriesList() {
                     {country.name}
                   </Link>
                 </TableCell>
-                <TableCell align="left">
+                <TableCell>
                   {country.languages.map(({ name }, index) => (
                     <li key={index}>{name}</li>
                   ))}
                 </TableCell>
-                <TableCell align="right">
+                <TableCell>
                   {new Intl.NumberFormat('fi-FI', { useGrouping: true }).format(
                     country.population
                   )}
                 </TableCell>
-                <TableCell align="left">{country.region}</TableCell>
-                <TableCell align="left">
+                <TableCell>{country.region}</TableCell>
+                <TableCell>
                   <AddButton country={country} />
                 </TableCell>
               </TableRow>
