@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
       minWidth: 200,
       paddingLeft: 20,
       alignItems: 'center',
+      '&:hover': {
+        textDecoration: 'none',
+        backgroundColor: '#f5f5f5',
+      },
     },
     cartHeader: {
       paddingLeft: 20,
