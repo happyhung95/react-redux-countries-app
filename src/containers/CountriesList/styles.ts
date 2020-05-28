@@ -24,6 +24,13 @@ const useStyles = makeStyles((theme: Theme) =>
     table: {
       marginTop: 65,
     },
+    tableHead: {
+      fontWeight: 'bolder',
+    },
+    tablerow: {
+      fontWeight: 'bolder',
+    },
+
     countryName: {
       textDecoration: 'none',
       color: 'black',

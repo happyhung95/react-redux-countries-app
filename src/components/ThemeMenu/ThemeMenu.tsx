@@ -46,7 +46,6 @@ export default function ThemeMenu() {
           classes={{
             paper: classes.drawerPaper,
           }}
-          ModalProps={{ onBackdropClick: handleMenuClose }}
         >
           <div className={classes.drawerHeader}>
             <Typography variant="h6" style={{ paddingLeft: 20 }}>

@@ -104,8 +104,8 @@ function CountriesList() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Flag</TableCell>
-            <TableCell>
+            <TableCell className={classes.tableHead}>Flag</TableCell>
+            <TableCell className={classes.tableHead}>
               <TableSortLabel
                 direction={ascendingOrder ? 'asc' : 'desc'}
                 onClick={handleSort}
@@ -113,9 +113,9 @@ function CountriesList() {
                 Name
               </TableSortLabel>
             </TableCell>
-            <TableCell>Languages</TableCell>
-            <TableCell>Population</TableCell>
-            <TableCell>Region</TableCell>
+            <TableCell className={classes.tableHead}>Languages</TableCell>
+            <TableCell className={classes.tableHead}>Population</TableCell>
+            <TableCell className={classes.tableHead}>Region</TableCell>
             <TableCell>{/*button column */}</TableCell>
           </TableRow>
         </TableHead>

@@ -46,8 +46,9 @@ export default function NavBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={handleMenuOpen}
           >
-            <MenuIcon onClick={handleMenuOpen} />
+            <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             Countries

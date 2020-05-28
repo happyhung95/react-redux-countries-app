@@ -10,12 +10,12 @@ const initState: AppState = {
   countries: {
     inCart: [],
     countries: [],
-    exception: undefined
+    exception: undefined,
   },
   ui: {
     searchKey: '',
     isMenuOpened: false,
-  }
+  },
 }
 
 export default function makeStore(initialState = initState) {
@@ -25,7 +25,10 @@ export default function makeStore(initialState = initState) {
 
   if (process.env.NODE_ENV === 'development') {
     if ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
-      composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        trace: true,
+        traceLimit: 25,
+      })
     }
   }
 
