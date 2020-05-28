@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-redux-countries-app/static/js/main.b68a538d.chunk.js",
-    "main.js.map": "/react-redux-countries-app/static/js/main.b68a538d.chunk.js.map",
+    "main.js": "/react-redux-countries-app/static/js/main.a4501a64.chunk.js",
+    "main.js.map": "/react-redux-countries-app/static/js/main.a4501a64.chunk.js.map",
     "runtime-main.js": "/react-redux-countries-app/static/js/runtime-main.ea4f1432.js",
     "runtime-main.js.map": "/react-redux-countries-app/static/js/runtime-main.ea4f1432.js.map",
     "static/js/2.cad4f328.chunk.js": "/react-redux-countries-app/static/js/2.cad4f328.chunk.js",
     "static/js/2.cad4f328.chunk.js.map": "/react-redux-countries-app/static/js/2.cad4f328.chunk.js.map",
     "index.html": "/react-redux-countries-app/index.html",
-    "precache-manifest.5c3a6246b6e45e861c67179a7045851f.js": "/react-redux-countries-app/precache-manifest.5c3a6246b6e45e861c67179a7045851f.js",
+    "precache-manifest.4a0e4282eb75b9c44836f1c40ccdba73.js": "/react-redux-countries-app/precache-manifest.4a0e4282eb75b9c44836f1c40ccdba73.js",
     "service-worker.js": "/react-redux-countries-app/service-worker.js",
     "static/js/2.cad4f328.chunk.js.LICENSE.txt": "/react-redux-countries-app/static/js/2.cad4f328.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ea4f1432.js",
     "static/js/2.cad4f328.chunk.js",
-    "static/js/main.b68a538d.chunk.js"
+    "static/js/main.a4501a64.chunk.js"
   ]
 }
