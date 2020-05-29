@@ -7,8 +7,8 @@ function* fetchCountries() {
   try {
     const allCountries: Country[] = yield call(getAllCountries)
     // sort name in ascending order
-    const sortedCountries = allCountries.sort((a,b) => (a.name > b.name)? 1: -1) 
-    yield put(fetchCountriesSucceed(sortedCountries))
+    allCountries.sort((a, b) => (a.name > b.name ? 1 : -1))
+    yield put(fetchCountriesSucceed(allCountries))
   } catch (exception) {
     yield put(fetchCountriesFail(exception))
   }

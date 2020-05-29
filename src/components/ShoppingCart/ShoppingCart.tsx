@@ -89,16 +89,13 @@ const ShoppingCart: React.FC<Props> = ({
                 <Link
                   to={`/react-redux-countries-app/country/${name}`}
                   className={classes.cartLink}
+                  style={{ paddingRight: 20 }}
                 >
                   {name}
                 </Link>
               </Typography>
             </Grid>
-            <Grid
-              item
-              xs={3}
-              style={{ paddingLeft: 20, display: 'flex', alignItems: 'center' }}
-            >
+            <Grid item xs={3} style={{ display: 'flex', alignItems: 'center' }}>
               <IconButton
                 edge="end"
                 aria-label="remove country from cart"
