@@ -25,17 +25,23 @@ import useStyles from './styles'
 
 function CountriesList() {
   // countries is already sorted in the saga
-  let countries = useSelector((state: AppState) => state.countries.countries)
+  let data = useSelector((state: AppState) => state.countries.countries)
   const searchKey = useSelector((state: AppState) => state.ui.searchKey)
   const [ascendingOrder, setSortOrder] = useState(true)
+  const [countries, setCountries] = useState(data)
   const { theme } = useContext(ThemeContext)
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    countries = countries.reverse()
-  }, [ascendingOrder, countries])
+    setCountries(data)
+  }, [data])
 
-  const handleSort = () => setSortOrder(!ascendingOrder)
+  useEffect(() => {}, [ascendingOrder])
+
+  const handleSort = () => {
+    setSortOrder(!ascendingOrder)
+    countries.reverse()
+    setCountries(countries)
+  }
 
   const classes = useStyles()
 
@@ -45,8 +51,8 @@ function CountriesList() {
         .filter(({ name }) =>
           name.toLowerCase().includes(searchKey.toLowerCase())
         )
-        .map((country, index) => (
-          <div className={classes.root} key={index}>
+        .map((country) => (
+          <div className={classes.root} key={country.name}>
             <Paper className={classes.paper}>
               <Grid container direction="column" alignItems="center">
                 <Link
@@ -124,8 +130,8 @@ function CountriesList() {
             .filter(({ name }) =>
               name.toLowerCase().includes(searchKey.toLowerCase())
             )
-            .map((country, index) => (
-              <TableRow key={index}>
+            .map((country) => (
+              <TableRow key={country.name}>
                 <TableCell className={classes.image}>
                   <Link
                     to={`/react-redux-countries-app/country/${country.name}`}
@@ -146,8 +152,8 @@ function CountriesList() {
                   </Link>
                 </TableCell>
                 <TableCell>
-                  {country.languages.map(({ name }, index) => (
-                    <li key={index}>{name}</li>
+                  {country.languages.map(({ name }) => (
+                    <li key={name}>{name}</li>
                   ))}
                 </TableCell>
                 <TableCell>

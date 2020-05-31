@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import Routes from './Routes'
-import ThemeContext, { themes } from './context'
+import ThemeContext, { themes, handleSwitchTheme } from './context'
 
 export default function App() {
   const [context, setContext] = useState({
@@ -9,14 +9,7 @@ export default function App() {
     switchTheme: (color: string) => {
       setContext((current) => ({
         ...current,
-        theme:
-          color === themes.blue.color
-            ? themes.blue
-            : color === themes.hazel.color
-              ? themes.hazel
-              : color === themes.yellow.color
-                ? themes.yellow
-                : themes.red,
+        theme: handleSwitchTheme(color),
       }))
     },
   })

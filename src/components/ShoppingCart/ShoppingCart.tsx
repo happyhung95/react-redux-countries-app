@@ -70,8 +70,8 @@ const ShoppingCart: React.FC<Props> = ({
         </Box>
         <Divider />
       </Typography>
-      {inCart.map(({ flag, name }, index) => (
-        <li key={index} className={classes.cartContainer}>
+      {inCart.map(({ flag, name }) => (
+        <li key={name} className={classes.cartContainer}>
           <Grid container>
             <Grid item xs={9} className={classes.cartCountry}>
               <Link

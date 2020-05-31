@@ -62,10 +62,10 @@ export default function ThemeMenu() {
           <Divider />
           <List>
             {[themes.hazel, themes.red, themes.blue, themes.yellow].map(
-              (theme, index) => (
+              (theme) => (
                 <ListItem
                   button
-                  key={index}
+                  key={theme.color}
                   onClick={() => {
                     switchTheme(theme.color)
                   }}

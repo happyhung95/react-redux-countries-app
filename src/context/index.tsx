@@ -19,6 +19,21 @@ export const themes = {
   },
 }
 
+export const handleSwitchTheme = (color: string) => {
+  switch (color) {
+  case themes.hazel.color:
+    return themes.hazel
+  case themes.red.color:
+    return themes.red
+  case themes.blue.color:
+    return themes.blue
+  case themes.yellow.color:
+    return themes.yellow
+  default:
+    return themes.red
+  }
+}
+
 export default React.createContext({
   theme: themes.blue,
   switchTheme: (name: string) => {},
