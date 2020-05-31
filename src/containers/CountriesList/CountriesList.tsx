@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { useTheme } from '@material-ui/core/styles'
@@ -16,25 +16,36 @@ import {
   TableRow,
   TableSortLabel,
   Divider,
+  CircularProgress,
 } from '@material-ui/core'
 
+import { fetchCountriesFromSaga } from '../../redux/actions'
 import AddButton from '../../components/AddButton'
 import ThemeContext from '../../context'
 import { AppState } from '../../types'
 import useStyles from './styles'
 
 function CountriesList() {
-  // countries is already sorted in the saga
+  // countries is already sorted (ascending) in the saga
   let data = useSelector((state: AppState) => state.countries.countries)
+  const error = useSelector((state: AppState) => state.countries.exception)
   const searchKey = useSelector((state: AppState) => state.ui.searchKey)
   const [ascendingOrder, setSortOrder] = useState(true)
   const [countries, setCountries] = useState(data)
   const { theme } = useContext(ThemeContext)
+  const dispatch = useDispatch()
 
+  // dispatch action once
+  useEffect(() => {
+    dispatch(fetchCountriesFromSaga())
+  }, [dispatch])
+
+  // render once getAllCountries service return data (promise resolved)
   useEffect(() => {
     setCountries(data)
   }, [data])
 
+  // render countries list whenever the sort order change
   useEffect(() => {}, [ascendingOrder])
 
   const handleSort = () => {
@@ -176,7 +187,21 @@ function CountriesList() {
   const themeMUI = useTheme()
   const desktopView = useMediaQuery(themeMUI.breakpoints.up('sm')) // min view width = 600px
 
-  return <>{desktopView ? renderDesktop() : renderMobile()}</>
+  return (
+    <>
+      {desktopView ? renderDesktop() : renderMobile()}
+      {error && <div>Error occur</div>}
+      {data.length < 1 && (
+        <div className={classes.loading}>
+          <CircularProgress
+            size="5rem"
+            style={{ color: theme.color }}
+            disableShrink={true}
+          />
+        </div>
+      )}
+    </>
+  )
 }
 
 export default CountriesList

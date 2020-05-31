@@ -27,14 +27,16 @@ const useStyles = makeStyles((theme: Theme) =>
     tableHead: {
       fontWeight: 'bolder',
     },
-    tablerow: {
-      fontWeight: 'bolder',
-    },
-
     countryName: {
       textDecoration: 'none',
       color: 'black',
       fontWeight: 'bolder',
+    },
+    loading: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '60vh',
     },
   })
 )

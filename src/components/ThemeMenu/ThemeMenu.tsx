@@ -32,57 +32,63 @@ export default function ThemeMenu() {
   const handleMenuClose = () => dispatch(toggleMenuOpen(false))
 
   return (
-    <div className={classes.root}>
-      <ClickAwayListener
-        mouseEvent="onMouseDown"
-        touchEvent="onTouchStart"
-        onClickAway={handleMenuClose}
-      >
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <Typography variant="h6" style={{ paddingLeft: 20 }}>
-              SWITCH THEME
-            </Typography>
-            <IconButton onClick={handleMenuClose}>
-              {theme.direction === 'ltr' ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-            {[themes.hazel, themes.red, themes.blue, themes.yellow].map(
-              (theme) => (
-                <ListItem
-                  button
-                  key={theme.color}
-                  onClick={() => {
-                    switchTheme(theme.color)
-                  }}
-                >
-                  <ListItemIcon
-                    className={classes.themeIcon}
-                    style={{ backgroundColor: theme.color }}
-                  >
-                    {theme.name[0]}
-                  </ListItemIcon>
-                  <ListItemText primary={theme.name} />
-                </ListItem>
-              )
-            )}
-          </List>
-        </Drawer>
-      </ClickAwayListener>
-    </div>
+    <>
+      {/* add constraint to prevent dispatching toggleMenuOpen action
+    from ClickAwayListener when Drawer is not opened */}
+      {open && (
+        <div className={classes.root}>
+          <ClickAwayListener
+            mouseEvent="onMouseDown"
+            touchEvent="onTouchStart"
+            onClickAway={handleMenuClose}
+          >
+            <Drawer
+              className={classes.drawer}
+              variant="persistent"
+              anchor="left"
+              open={open}
+              classes={{
+                paper: classes.drawerPaper,
+              }}
+            >
+              <div className={classes.drawerHeader}>
+                <Typography variant="h6" style={{ paddingLeft: 20 }}>
+                  SWITCH THEME
+                </Typography>
+                <IconButton onClick={handleMenuClose}>
+                  {theme.direction === 'ltr' ? (
+                    <ChevronLeftIcon />
+                  ) : (
+                    <ChevronRightIcon />
+                  )}
+                </IconButton>
+              </div>
+              <Divider />
+              <List>
+                {[themes.hazel, themes.red, themes.blue, themes.yellow].map(
+                  (theme) => (
+                    <ListItem
+                      button
+                      key={theme.color}
+                      onClick={() => {
+                        switchTheme(theme.color)
+                      }}
+                    >
+                      <ListItemIcon
+                        className={classes.themeIcon}
+                        style={{ backgroundColor: theme.color }}
+                      >
+                        {theme.name[0]}
+                      </ListItemIcon>
+                      <ListItemText primary={theme.name} />
+                    </ListItem>
+                  )
+                )}
+              </List>
+            </Drawer>
+          </ClickAwayListener>
+        </div>
+      )}
+    </>
   )
 }
