@@ -2,6 +2,7 @@
 
 
 ## Features
+* Hooks
 * Redux
 * Redux-thunk
 * Redux-saga
