@@ -45,9 +45,6 @@ function CountriesList() {
     setCountries(data)
   }, [data])
 
-  // render countries list whenever the sort order change
-  useEffect(() => {}, [ascendingOrder])
-
   const handleSort = () => {
     setSortOrder(!ascendingOrder)
     countries.reverse()
@@ -67,7 +64,7 @@ function CountriesList() {
             <Paper className={classes.paper}>
               <Grid container direction="column" alignItems="center">
                 <Link
-                  to={`/react-redux-countries-app/country/${country.name}`}
+                  to={`/countries-store/country/${country.name}`}
                   className={classes.image}
                 >
                   <img
@@ -78,7 +75,7 @@ function CountriesList() {
                 </Link>
                 <Typography variant="h5">
                   <Link
-                    to={`/react-redux-countries-app/country/${country.name}`}
+                    to={`/country/${country.name}`}
                     className={classes.countryName}
                     style={{ color: theme.color }}
                   >
@@ -145,7 +142,7 @@ function CountriesList() {
               <TableRow key={country.name}>
                 <TableCell className={classes.image}>
                   <Link
-                    to={`/react-redux-countries-app/country/${country.name}`}
+                    to={`/countries-store/country/${country.name}`}
                   >
                     <img
                       className={classes.img}
@@ -156,7 +153,7 @@ function CountriesList() {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   <Link
-                    to={`/react-redux-countries-app/country/${country.name}`}
+                    to={`/countries-store/country/${country.name}`}
                     className={classes.countryName}
                   >
                     {country.name}

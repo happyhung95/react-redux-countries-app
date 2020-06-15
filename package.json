@@ -68,5 +68,5 @@
       "eslint --fix"
     ]
   },
-  "homepage": "http://happyhung95.github.io/react-redux-countries-app"
+  "homepage": "http://happyhung95.github.io/countries-store"
 }

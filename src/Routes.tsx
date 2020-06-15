@@ -6,10 +6,10 @@ import Country from './pages/Country/Country'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/react-redux-countries-app" component={Home} />
+    <Route exact path="/countries-store" component={Home} />
     <Route
       exact
-      path="/react-redux-countries-app/country/:name"
+      path="/countries-store/country/:name"
       component={Country}
     />
   </Switch>

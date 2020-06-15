@@ -53,7 +53,7 @@ export default function NavBar() {
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <Link
-              to={`/react-redux-countries-app/`}
+              to={`/countries-store/`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
               Countries

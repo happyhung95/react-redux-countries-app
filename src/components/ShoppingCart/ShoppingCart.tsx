@@ -75,7 +75,7 @@ const ShoppingCart: React.FC<Props> = ({
           <Grid container>
             <Grid item xs={9} className={classes.cartCountry}>
               <Link
-                to={`/react-redux-countries-app/country/${name}`}
+                to={`/countries-store/country/${name}`}
                 className={classes.cartLink}
               >
                 <img
@@ -87,7 +87,7 @@ const ShoppingCart: React.FC<Props> = ({
               </Link>
               <Typography>
                 <Link
-                  to={`/react-redux-countries-app/country/${name}`}
+                  to={`/countries-store/country/${name}`}
                   className={classes.cartLink}
                   style={{ paddingRight: 20 }}
                 >
