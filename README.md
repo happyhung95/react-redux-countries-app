@@ -1,6 +1,6 @@
 # Countries store
 
-A countries store connecting the [REST Countries API] (https://restcountries.eu/). 
+A countries store connecting the [REST Countries API](https://restcountries.eu/). 
 
 ## Features
 * Hooks
