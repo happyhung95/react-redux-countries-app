@@ -13,5 +13,5 @@ A countries store connecting the [REST Countries API](https://restcountries.eu/)
 * Husky & lint-staged
 * Typescript
 
-#### Website
+### Website
 https://happyhung95.github.io/countries-store/
