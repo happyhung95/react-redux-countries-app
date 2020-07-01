@@ -2,7 +2,7 @@
 
 A countries store connecting the [REST Countries API](https://restcountries.eu/). 
 
-## Features
+### Technology
 * Hooks
 * Redux
 * Redux-thunk
@@ -11,8 +11,7 @@ A countries store connecting the [REST Countries API](https://restcountries.eu/)
 * Prettier
 * ESLint
 * Husky & lint-staged
-
-## Language
 * Typescript
 
+#### Website
 https://happyhung95.github.io/countries-store/
